@@ -17,4 +17,14 @@ def step(
         left_wheel_speed: float,
         right_wheel_speed: float,
         dt: float,
-)
+):
+    #angular to linear
+    v_left = self.wheel_radius * left_wheel_speed
+    v_right = self.wheel_radius * right_wheel_speed
+
+    #velocities
+    linear_velocity = (v_right + v_left)/2
+    angular_velocity = (v_right - v_left)/self.wheel_base
+
+
+
